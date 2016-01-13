@@ -1,0 +1,169 @@
+{% set module = 'rpinfo' %}
+
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Companions</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">
+
+        <table>
+        <tbody data-bind="foreach: companion_list">
+        <tr>
+        <td>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="height: 50px">
+                    <table class="col-xs-12">
+                        <tr>
+                            <td class="col-xs-1">
+                                <b>Name</b>
+                            </td>
+                            <td class="col-xs-4">
+                                <input type="text" class="chrInputTextNoBorderDefault col-xs-12" style="font-size: 20px;" data-bind="value: name">
+                            </td>
+                            <td class="col-xs-1">
+                                <b style="float:right;">HP</b>
+                            </td>
+                            <td class="col-xs-2">
+                            <input type="text" class="chrInputTextNoBorderDefault col-xs-12" style="font-size: 20px;" data-bind="value: hp">
+                            </td>
+                            <td class="col-xs-2">
+                                <b style="float:right;">HP max</b>
+                            </td>
+                            <td class="col-xs-2">
+                            <input type="text" class="chrInputTextNoBorderDefault col-xs-12" style="font-size: 20px;" data-bind="value: hpMax">
+                            </td>
+                        </tr>
+                    </table>
+
+                </div><!--/.panel-heading-->
+                <div class="panel-body">
+
+                <table class="col-xs-12 table-condensed" padding=0>
+                    <tr style="width: 100%;">
+                        <td class="col-xs-2">
+                            <span class="chrProperty col-xs-12">Str</span>
+                        </td>
+                        <td class="col-xs-2">
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: Str"></input>
+                        </td>
+                        <td class="col-xs-2">
+                            <span class="chrProperty col-xs-12">Dex</span>
+                        </td>
+                        <td class="col-xs-2">
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: Dex"></input>
+                        </td>
+                        <td class="col-xs-2">
+                            <span class="chrProperty col-xs-12">Con</span>
+                        </td>
+                        <td class="col-xs-2">
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: Con"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-xs-2">
+                            <span class="chrProperty col-xs-12">Int</span>
+                        </td>
+                        <td class="col-xs-2">
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: Int"></input>
+                        </td>
+                        <td class="col-xs-2">
+                            <span class="chrProperty col-xs-12">Wis</span>
+                        </td>
+                        <td class="col-xs-2">
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: Wis"></input>
+                        </td>
+                        <td class="col-xs-2">
+                            <span class="chrProperty col-xs-12">Chr</span>
+                        </td>
+                        <td class="col-xs-2">
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: Chr"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-xs-2">
+                            <span class="chrProperty col-xs-12">Fort</span>
+                        </td>
+                        <td class="col-xs-2">
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: fortSave"></input>
+                        </td>
+                        <td class="col-xs-2">
+                            <span class="chrProperty col-xs-12">Ref</span>
+                        </td>
+                        <td class="col-xs-2">
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: refSave"></input>
+                        </td>
+                        <td class="col-xs-2">
+                            <span class="chrProperty col-xs-12">Will</span>
+                        </td>
+                        <td class="col-xs-2">
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: willSave"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center><b>Type</b></center>
+                        </td>
+                        <td>
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: type"></input>
+                        </td>
+                        <td>
+                            <center><b>Size</b></center>
+                        </td>
+                        <td>
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: size"></input>
+                        </td>
+                        <td>
+                            <center><b>Speed</b></center>
+                        </td>
+                        <td>
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: speed"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=1>
+                            <center><b>AC</b></center>
+                        </td>
+                        <td colspan=11>
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: AC"></input>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td colspan=1>
+                            <center><b>Attack</b></center>
+                        </td>
+                        <td colspan=11>
+                            <input type="text" class="chrInputText col-xs-12" data-bind="value: attack"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=1>
+                            <center><b>Special Qualities</b></center>
+                        </td>
+                        <td colspan=5>
+                            <textarea rows=5 style="width:100%;" type="text" class="chrInputText col-xs-12" data-bind="value: special"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=1 valign="top">
+                            <center><b>Notes</b></center>
+                        </td>
+                        <td colspan=5>
+                            <textarea rows=5 style="width:100%;" class="chrInputText col-xs-12" data-bind="value: note"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+
+                 <button class="btn-default-black chrLabel" data-bind="click: add_companion()" style="float:right;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div>
+
+        </div>
+    </div>
+</div>

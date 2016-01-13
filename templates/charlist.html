@@ -1,0 +1,62 @@
+{% extends "baselayout.html" %}
+
+{% block content %}
+
+    <!-- ko foreach: characterList -->
+
+        <div class="modal fade" data-bind="attr: {id: 'delModal'+cid}" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <center><b>Are you sure you want to delete that character?</b></center>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-danger col-xs-offset-2 col-xs-8" data-bind="attr: {href: '/removechar/'+cid }" data-dismiss="modal">No.</button><br><br>
+                        <center><a href="/removechar" data-bind="attr: {href: '/removechar/'+cid }">Yes, I am sure!</a></center>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- /ko -->
+
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>
+                Character roster
+            </b>
+        </div>
+        <div class="panel-body">
+            
+        <table class="col-xs-12">
+            <tbody data-bind="foreach: characterList">
+                <td>
+                    <a href="/viewchar" class="btn btn-default col-xs-8 col-xs-offset-1" data-bind="attr: { href: '/viewchar/'+cid }">
+                        <span data-bind="text: name"></span>
+                    </a>
+                    <a href="#" class="btn btn-danger col-xs-2" data-toggle="modal"data-bind="attr: { 'data-target': '#delModal'+cid }">Delete</a>
+                </td>
+            </tbody>
+        </table>
+
+
+        <hr>
+        <span class="col-xs-4 col-xs-offset-2"><b>Add a new character:</b></span><br><br><br>
+        
+        <table class="col-xs-12">
+            <td>
+                <input type="text" class="chrInputText col-xs-4 col-lg-offset-2" data-bind="value: new_character_name"></input>        
+                <center><a href="#" data-bind="attr: { href: newchar_path }" class="btn-default chrLabel col-xs-3 col-lg-offset-1">
+                    Add character <i class="glyphicon glyphicon-chevron-down"></i>
+                </a></center>
+            </td>
+        </table>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        ko.applyBindings(new playerViewModel());
+    </script>
+{% endblock %}

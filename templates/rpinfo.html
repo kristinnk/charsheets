@@ -1,0 +1,92 @@
+{% set module = 'rpinfo' %}
+
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Backstory</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">        
+            <table class="col-xs-12">
+                <tr style="width: 100%;">
+                    <td><textarea rows="10" cols="50" class="chrInputText col-xs-12" data-bind="value: backstory"></textarea></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Life events</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">   
+            <table class="col-xs-12">
+                <tbody data-bind="foreach: events">
+                    <tr>
+                        <td><textarea rows="5" cols="50" class="chrInputText col-xs-12" data-bind="value: item"></textarea></td>
+                    <tr>
+                </tbody>
+            </table>
+            <button class="btn-default-black chrLabel" data-bind="click: add_event" style="float:right; margin-top:20px;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Notes</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">   
+            <table class="col-xs-12">
+                <tbody data-bind="foreach: notes">
+                    <tr>
+                        <td><textarea rows="5" cols="50" class="chrInputText col-xs-12" data-bind="value: item"></textarea></td>
+                    <tr>
+                </tbody>
+            </table>
+            <button class="btn-default-black chrLabel" data-bind="click: add_note" style="float:right; margin-top:20px;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>NPC Information</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">   
+            <table class="col-xs-12 table-compacted">
+                <tr style="width: 100%;">
+                    <td style="background-color:black; color:white;">
+                        Name
+                    </td>
+                    <td style="background-color:black; color:white;">
+                        Note
+                    </td>
+                    <td style="background-color:black; color:white;">
+                        Location
+                    </td>
+                <tr>
+                <tbody data-bind="foreach: npcInfo">
+                    <tr>
+                        <td>
+                            <input type="text" class="chrInputTextNoBorder col-xs-12" data-bind="value: name">
+                        </td>
+                        <td>
+                            <input type="text" class="chrInputTextNoBorder col-xs-12" data-bind="value: notes">
+                        </td>
+                        <td>
+                            <input type="text" class="chrInputTextNoBorder col-xs-12" data-bind="value: loc">
+                        </td>
+                    <tr>
+                </tbody>
+            </table>
+            <button class="btn-default-black chrLabel" data-bind="click: add_npc" style="float:right; margin-top:20px;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,438 @@
+{% set module = 'stats' %}
+
+<div class="chrDiv panel-black">
+    <div class="panel-heading">
+        <b>General information</b>
+        <div class="clearfix"></div>
+    </div>
+    <div class="panel-body">
+        <table class="col-xs-12">
+            <tr>
+                <td class="col-xs-2">
+                    <span class="chrLabel col-xs-12">Name</span>
+                </td>
+                <td class="col-xs-10" colspan=3>
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_name"></input>
+                </td>
+            <tr>
+
+            </tr>
+                <td class="col-xs-1">
+                    <span class="chrLabel col-xs-12">Class</span>
+                </td>
+                <td class="col-xs-5">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_class"></input>
+                </td>
+                <td class="col-xs-1">
+                    <span class="chrLabel col-xs-12">Race</span>
+                </td>
+                <td class="col-xs-5">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_race"></input>
+                </td>
+            </tr>
+
+            </tr>
+                <td class="col-xs-1">
+                    <span class="chrLabel col-xs-12">Alignment</span>
+                </td>
+                <td class="col-xs-5">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_alignment"></input>
+                </td>
+                <td class="col-xs-1">
+                    <span class="chrLabel col-xs-12">Deity</span>
+                </td>
+                <td class="col-xs-5">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: deity"></input>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <table class="col-xs-12" style="margin-top:12px">
+            </tr>
+                <td class="col-xs-1">
+                    <span class="chrLabel col-xs-12">Campaign</span>
+                </td>
+                <td class="col-xs-5">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: campaign"></input>
+                </td>
+                <td class="col-xs-1">
+                    <span class="chrLabel col-xs-12">Level</span>
+                </td>
+                <td class="col-xs-5">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_level"></input>
+                </td>
+            </tr>
+
+            </tr>
+                <td class="col-xs-1">
+                    <span class="chrLabel col-xs-12">XP</span>
+                </td>
+                <td class="col-xs-5">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: curr_xp"></input>
+                </td>
+                <td class="col-xs-1">
+                    <span class="chrLabel col-xs-12">Needed</span>
+                </td>
+                <td class="col-xs-5">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: next_level_xp"></input>
+                </td>
+            </tr>
+        </table>
+
+
+        <table class="col-xs-12" style="margin-top:12px">
+            </tr>
+                <td class="col-xs-2">
+                    <span class="chrLabel col-xs-12 centrify" align="center">Size</span>
+                </td>
+                <td>
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_size"></input>
+                </td>
+                <td class="col-xs-2">
+                    <span class="chrLabel col-xs-12 centrify" align="center">Age</span>
+                </td>
+                <td>
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_age"></input>
+                </td>
+                <td class="col-xs-2">
+                    <span class="chrLabel col-xs-12 centrify" align="center">Gender</span>
+                </td>
+                <td>
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_gender"></input>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="chrLabel col-xs-12 centrify" align="center">Height</span>
+                </td>
+                <td>
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_height"></input>
+                </td>
+                <td>
+                    <span class="chrLabel col-xs-12 centrify" align="center">Weight</span>
+                </td>
+                <td>
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_weight"></input>
+                </td>
+                <td>
+                    <span class="chrLabel col-xs-12 centrify">Eyes</span>
+                </td>
+                <td>
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_eyes"></input>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="chrLabel col-xs-12 centrify">Hair</span>
+                </td>
+                <td>
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: char_hair"></input>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+<br>
+
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 chrDiv panel">
+    <div class="panel-body">
+        <table class="table-condensed col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <tr>
+                <td><span class="chrLabelTiny col-xs-12" align="center">Ability</span></td>
+                <td><span class="chrLabelTiny col-xs-12" align="center">Score</span></td>
+                <td><span class="chrLabelTiny col-xs-12" align="center">Mod</span></td>
+                <td><span class="chrLabelTiny col-xs-12" align="center">Temp</span></td>
+                <td><span class="chrLabelTiny col-xs-12" align="center">Temp score</span></td>
+                <td><span class="chrLabelTiny col-xs-12" align="center">Temp mod</span></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">Str</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_str"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_str_mod" disabled></input></td>
+                <td><input type="text" class="chrInputText col-xs-12"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_str_temp"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_str_temp_mod" disabled></input></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">Dex</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_dex"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_dex_mod" disabled></input></td>
+                <td><input type="text" class="chrInputText col-xs-12"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_dex_temp"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_dex_temp_mod" disabled></input></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">Con</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_con"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_con_mod" disabled></input></td>
+                <td><input type="text" class="chrInputText col-xs-12"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_con_temp"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_con_temp_mod" disabled></input></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">Int</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_int"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_int_mod" disabled></input></td>
+                <td><input type="text" class="chrInputText col-xs-12"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_int_temp"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_int_temp_mod" disabled></input></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">Wis</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_wis"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_wis_mod" disabled></input></td>
+                <td><input type="text" class="chrInputText col-xs-12"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_wis_temp"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_wis_temp_mod" disabled></input></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">Chr</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_chr"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_chr_mod" disabled></input></td>
+                <td><input type="text" class="chrInputText col-xs-12"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_chr_temp"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: attr_chr_temp_mod" disabled></input></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 chrDiv panel col-lg-offset-1">
+    <div class="panel-body">
+            <center>
+                <span class="chrPropertyTall col-xs-3">Current HP</span>
+                <input type="text" class="chrInputTextTall col-xs-3" data-bind="value: current_hitpoints"></input>
+                <span class="chrPropertyTall col-xs-3">Max HP</span>
+                <input type="text" class="chrInputTextTall col-xs-3" data-bind="value: max_hitpoints"></input>
+            </center>
+            <br><br>
+
+            <span class="chrProperty col-xs-3">AC</span>
+            <input type="text" class="chrInputText col-xs-9" data-bind="value: total_ac" disabled></input>
+            
+            <table class="table-condensed col-xs-12 col-sm-12 col-xs-12 col-lg-12">
+                <tr>
+                    <td class="col-xs-3"><span class="chrLabel col-xs-12">Dex</span></td>
+                    <td class="col-xs-3"><input type="text" class="chrInputText col-xs-12" data-bind="value: highest_armor_dex_mod" disabled></input></td>
+                    
+
+                    <td class="col-xs-3"><span class="chrLabel col-xs-12">Armor</span></td>
+                    <td class="col-xs-3"><input type="text" class="chrInputText col-xs-12" data-bind="value: armorAC" disabled></input></td>
+                </tr>
+
+                <tr>
+                    <td class="col-xs-3"><span class="chrLabel col-xs-12">Shield</span></td>
+                    <td class="col-xs-3"><input type="text" class="chrInputText col-xs-12" data-bind="value: shieldAC" disabled></input></td>
+
+
+                    <td class="col-xs-3"><span class="chrLabel col-xs-12">Natural</span></td>
+                    <td class="col-xs-3"><input type="text" class="chrInputText col-xs-12" data-bind="value: naturalAC" disabled></input></td>
+                </tr>
+
+                <tr>
+                    <td class="col-xs-3"><span class="chrLabel col-xs-12">Deflect</span></td>
+                    <td class="col-xs-3"><input type="text" class="chrInputText col-xs-12" data-bind="value: deflectAC" disabled></input></td>
+
+                    <td class="col-xs-3"><span class="chrLabel col-xs-12" data-bind="value: sizeAC">Size</span></td>
+                    <td class="col-xs-3"><input type="text" class="chrInputText col-xs-12" data-bind="value: sizeAC" disabled></input></td>
+                </tr>
+
+                <tr>
+                    <td class="col-xs-3"><span class="chrLabel col-xs-12">Other</span></td>
+                    <td class="col-xs-3"><input type="text" class="chrInputText col-xs-12" data-bind="value: otherAC"></input></td>
+
+                    <td class="col-xs-3"><span class="chrLabel col-xs-12">Misc</span></td>
+                    <td class="col-xs-3"><input type="text" class="chrInputText col-xs-12" data-bind="value: miscAC" disabled></input></td>
+                </tr>
+
+                <tr>
+                    <td class="col-xs-3"><span class="chrLabel col-xs-12">Class specific</span></td>
+                    <td class="col-xs-3"><input type="text" class="chrInputText col-xs-12" data-bind="value: classAC"</input></td>
+                </tr>
+            </table><br>
+        <span class="chrProperty col-xs-3">Touch</span>
+        <input type="text" class="chrInputText col-xs-3" disabled data-bind="value: touch_ac"></input>
+        <span class="chrProperty col-xs-3">Flat</span>
+        <input type="text" class="chrInputText col-xs-3" disabled data-bind="value: flatfFooted_ac"></input>
+
+        <span class="chrProperty col-xs-5">Initiative</span>
+        <input type="text" class="chrInputText col-xs-7" data-bind="value: initiative"></input>
+
+    </div>
+</div>
+
+
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 chrDiv panel">
+    <div class="panel-body">
+        <table class="table-condensed col-xs-12 col-sm-12 col-xs-12 col-lg-12">
+            <tr>
+                <td><span class="chrLabel col-xs-12" align="right"><center>Saving throw</center></span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Total</span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Base</span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Ability mod</span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Magic mod</span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Misc mod</span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Temp mod</span>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">FORTITUDE</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: fortSaveTotal"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: fortSaveBase"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: highest_con_mod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: fortSaveMagicMod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: fortSaveMiscMod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: fortSaveTempMod"></input></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">REFLEX</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: refSaveTotal"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: refSaveBase"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: highest_dex_mod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: refSaveMagicMod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: refSaveMiscMod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: refSaveTempMod"></input></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">WILL</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: willSaveTotal"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: willSaveBase"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: highest_wis_mod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: willSaveMagicMod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: willSaveMiscMod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: willSaveTempMod"></input></td>
+                <br>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 chrDiv panel">
+    <div class="panel-body">
+        <table class="table-condensed col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <tr>
+                <td><span class="chrLabel col-xs-12" align="right"></span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Total AB</span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Base AB</span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Ability mod</span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Misc mod</span>
+                <td><span class="chrLabelTiny col-xs-12" align="right">Temp mod</span>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">MELEE</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: meleeTotal"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: baseAttackBonus"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: highest_str_mod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: miscMeleeMod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: tempMeleeMod"></input></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">CMB</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: cmbTotal"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: baseAttackBonus"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: highest_str_mod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: miscCMBMod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: tempCMBMod"></input></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">CMD</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: cmdTotal"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: baseAttackBonus"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: 'Dex : '+ highest_dex_mod() +' / Str: '+ highest_str_mod()"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: miscCMDMod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: tempCMDMod"></input></td>
+            </tr>
+            <tr>
+                <td><span class="chrProperty col-xs-12">RANGED</span></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: rangedTotal"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: baseAttackBonus"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" disabled data-bind="value: highest_dex_mod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: miscRangedMod"></input></td>
+                <td><input type="text" class="chrInputText col-xs-12" data-bind="value: tempRangedMod"></input></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+
+<div class="col-xs-12 chrDiv panel">
+    <div class="panel-body">
+        
+        <table class="compact-table col-xs-6">
+            <tr>
+                <td class ="chrProperty col-xs-6">
+                    Spell resistance
+                </td>
+                <td class="col-xs-6">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: spellResist"></input>
+                </td>
+            </tr>
+            <tr height="10px">
+            </tr>
+            <tr>
+                <td class ="chrProperty col-xs-6">
+                    Acid resistance
+                </td>
+                <td class="col-xs-6">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: acidResist"></input>
+                </td>
+            </tr>
+            <tr>
+                <td class ="chrProperty col-xs-6">
+                    Cold resistance
+                </td>
+                <td class="col-xs-6">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: coldResist"></input>
+                </td>
+            </tr>
+            <tr>
+                <td class ="chrProperty col-xs-6">
+                    Electricity resistance
+                </td>
+                <td class="col-xs-6">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: electricityResist"></input>
+                </td>
+            </tr>
+            <tr>
+                <td class ="chrProperty col-xs-6">
+                    Fire resistance
+                </td>
+                <td class="col-xs-6">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: fireResist"></input>
+                </td>
+            </tr>
+            <tr>
+                <td class ="chrProperty col-xs-6">
+                    Sonic resistance
+                </td>
+                <td class="col-xs-6">
+                    <input type="text" class="chrInputText col-xs-12" data-bind="value: sonicResist"></input>
+                </td>
+            </tr>
+        </table>
+
+        <table class="compact-table col-xs-6" style="height:190px;" cellpadding=0>
+            <tr>
+                <td class="chrProperty col-xs-12">
+                    Other defences
+                </td>
+            </tr>
+            <tr>
+                <td class="col-xs-12" style="height:100%;">
+                    <textarea style="height:100%; width:100%;" class="form-control" data-bind="value: otherDefences">asdf</textarea>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+</div>
+

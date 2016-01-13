@@ -1,0 +1,124 @@
+{% extends "baselayout.html" %}
+
+{% block content %}
+
+    <div class="modal fade" id="userConfig" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <center><b>User configuration</b></center>
+                </div>
+                <div class="modal-body">
+                    <input type="checkbox" data-bind="checked: showSpells"> Show spells section.<br>
+                    <input type="checkbox" data-bind="checked: showCompanions"> Show companions section.<br>
+                    <input type="checkbox" data-bind="checked: showBuffs"> Show buff tracking under equipment section.
+                    <br><br>
+                    <center>Save and refresh the page after changes have been made</center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="publicLink" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <center><b>Public link</b></center>
+                </div>
+                <div class="modal-body">
+                    <center>Copy and paste the following to show off your character.</center>
+                    <br>
+                    <center><a data-bind="attr: { href: 'http://charsheets.herokuapp.com/publiclink/'+{{ cid }} }"><span data-bind="text:'http://charsheets.herokuapp.com/publiclink/'+{{ cid }}"></a></span></center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageLinkModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <center><b>Image link</b></center>
+                </div>
+                <div class="modal-body">
+                    <center>Enter a link to the image you wish to use for your characters profile picture.</center>
+                    <br>
+                    <center><input type="text" class="chrInputText col-xs-12" data-bind="value: imageLink"></center>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-black col-xs-3" style="top:41px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-right: 0px;" id="menuBar">
+        <div class="panel-body">
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-default-black" id="stats"> Stats </button>
+                <button type="button" class="btn btn-default-black" id="skills"> Skills / Feats / Abilities</button>
+                <button type="button" class="btn btn-default-black" id="equipment"> Equipment </button>
+            <!-- ko if: showSpells -->
+                <button type="button" class="btn btn-default-black" id="spells"> Spells </button>
+            <!-- /ko -->    
+            <!-- ko if: showCompanions -->
+                <button type="button" class="btn btn-default-black" id="animal_comp"> Companions </button>
+            <!-- /ko -->    
+                <button type="button" class="btn btn-default-black" id="rp_info"> Background </button>
+                <button class="btn btn-success col-xs-3" data-bind="click: save_char">Save changes 
+                    <i class="glyphicon glyphicon-save"></i>
+                </button>
+
+                <div style="text-align: center;">
+                    <br><a href="#" data-toggle="modal" data-target="#imageLinkModal"><img src="#" class="col-xs-12 alttextCenter" data-bind="attr: { src: imageLink }" alt="Click to set character image."></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-black col-xs-offset-3 mainShadow">
+        <div class="panel-heading">
+            <b>
+            <span data-bind="text: char_name"></span>, the
+            <span data-bind="text: char_race" style="text-transform:lowercase;"></span>
+            <span data-bind="text: char_class" style="text-transform:lowercase;"></span>
+            </b>
+            <a href="#" style="float:right; color:white" data-toggle="modal" data-target="#userConfig"><i class="glyphicon glyphicon-cog"></i></a>
+            <a href="#" style="float:right; color:white; margin-right:10px" data-toggle="modal" data-target="#publicLink"><i class="glyphicon glyphicon-link"></i></a>
+        </div>
+
+        <div class="panel-body">
+                <div class="col-xs-12">
+                    <div id="stats_div">
+                        {% include "stats.html" %}
+                    </div>
+
+                    <div id="skills_div" style="display: none">
+                        {% include "skills.html" %}
+                    </div>
+
+                    <div id="equipment_div" style="display: none">
+                        {% include "equipment.html" %}
+                    </div>
+
+                    <div id="spells_div" style="display: none">
+                        {% include "spells.html" %}
+                    </div>
+
+                    <div id="rp_info_div" style="display: none">
+                        {% include "rpinfo.html" %}
+                    </div>
+
+                    <div id="animal_comp_div" style="display: none">
+                        {% include "animalcomp.html" %}
+                    </div>
+                </div>
+        <br><br><br>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        ko.applyBindings(new characterViewModel({{ cid }}));
+    </script>
+{% endblock %}

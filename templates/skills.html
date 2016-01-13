@@ -1,0 +1,112 @@
+{% set module = 'skills' %}
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Skills</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">
+            <table class="table-compacted col-xs-12">
+                <tr>
+                    <td colspan=8>
+                        <input type='text' class="chrInputText col-xs-12" data-bind="value: skillFilterText, valueUpdate: 'afterkeydown'" placeholder="Filter"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="chrLabelTiny centrify" style="width: 30%">
+                        Skill name
+                    </td>
+                    <td class="chrLabelTiny centrify" style="width: 10%">
+                        Key ab
+                    </td>
+                    <td class="chrLabelTiny centrify">
+                        CS
+                    </td>
+                    <td class="chrLabelTiny centrify">
+                        Skill mod
+                    </td>
+                    <td class="chrLabelTiny centrify">
+                        Ab mod
+                    </td>
+                    <td class="chrLabelTiny centrify">
+                        Rank
+                    </td>
+                    <td class="chrLabelTiny centrify">
+                        Misc mod
+                    </td>
+                    <td class="chrLabelTiny centrify">
+                        Check pen
+                    </td>
+                </tr>
+
+                <tbody data-bind="foreach: filteredSkillList">
+                    <tr>
+                        <td class="chrLabelSmall"><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: skillName"></input></td>
+                        <td class="chrLabelSmall"><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: keyAb"></input></td>
+                        <td class="chrLabelSmall"><input type="checkbox" class="chrInputTextNoBorder col-xs-10 centrify" data-bind="checked: CS"></input></td>
+                        <!-- <td class="chrLabelSmall">=<input type="text" class="chrInputTextNoBorder col-xs-10 centrify" data-bind="value: $root.calcTotal(keyAb, rank, miscMod, checkPen, CS)"></input></td> -->
+                        <td class="chrLabelSmall">=<input type="text" class="chrInputTextNoBorder col-xs-10 centrify" data-bind="value: total" disabled></input></td>
+                        <td class="chrLabelSmall">+<input type="text" class="chrInputTextNoBorder col-xs-10 centrify" data-bind="value: abMod" disabled></input></td>
+                        <td class="chrLabelSmall">+<input type="text" class="chrInputTextNoBorder col-xs-10 centrify" data-bind="value: rank"></input></td>
+                        <td class="chrLabelSmall">-<input type="text" class="chrInputTextNoBorder col-xs-10 centrify" data-bind="value: miscMod"></input></td>
+                        <td class="chrLabelSmall"><input type="text" class="chrInputTextNoBorder col-xs-10 centrify" data-bind="value: checkPen" disabled></input></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn-default-black chrLabel" data-bind="click: add_skill" style="float:right; margin-top:20px;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Feats</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">        
+            <table class="col-xs-12">
+                <tbody data-bind="foreach: featList">
+                    <tr style="width: 100%;">
+                        <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: item"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn-default-black chrLabel" data-bind="click: add_feat" style="float:right; margin-top:20px;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Special abilities / Traits</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">        
+            <table class="col-xs-12">
+                <tbody data-bind="foreach: featAbilitiesTraitsList">
+                    <tr>
+                        <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: item"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn-default-black chrLabel" data-bind="click: add_featAbilitiesTraitsList" style="float:right; margin-top:20px;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Languages</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">        
+            <table class="col-xs-12">
+                <tbody data-bind="foreach: language_list">
+                    <tr style="widht: 100%;">
+                        <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: item"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn-default-black chrLabel" data-bind="click: add_language" style="float:right; margin-top:20px;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div>
+    </div>
+</div>

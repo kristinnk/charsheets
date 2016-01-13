@@ -1,0 +1,19 @@
+{% extends "notloggedbase.html" %}
+
+{% block header %}
+Register
+{% endblock %}
+
+{% block content %}
+<center>
+    <form action="/adduser/" method="post"><br>
+        Username<br>
+        <p><input type=text name="username" class="form-control"><br>
+        Password<br>
+        <p><input type=password name="password" class="form-control"><br>
+        Confirm password<br>
+        <p><input type=password class="form-control" name="confpass"><br>
+        <p><input type=submit value=Register class="btn btn-primary">
+    </form>
+</center>
+{% endblock %}

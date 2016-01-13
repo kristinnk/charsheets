@@ -1,0 +1,156 @@
+.btn-default-black {
+  font-weight: bold;
+  color: #dddddd;
+  background-color: #111111;
+  border-color: #444444;
+}
+
+.btn-default-black:hover,
+.btn-default-black:focus,
+.btn-default-black:active,
+.btn-default-black.active,
+.open .dropdown-toggle.btn-default-black {
+  color: #dddddd;
+  background-color: #555555;
+  border-color: #adadad;
+}
+
+.btn-default-black:active,
+.btn-default-black.active,
+.open .dropdown-toggle.btn-default-black {
+  background-image: none;
+}
+
+.btn-default-black.disabled,
+.btn-default-black[disabled],
+fieldset[disabled] .btn-default-black,
+.btn-default-black.disabled:hover,
+.btn-default-black[disabled]:hover,
+fieldset[disabled] .btn-default-black:hover,
+.btn-default-black.disabled:focus,
+.btn-default-black[disabled]:focus,
+fieldset[disabled] .btn-default-black:focus,
+.btn-default-black.disabled:active,
+.btn-default-black[disabled]:active,
+fieldset[disabled] .btn-default-black:active,
+.btn-default-black.disabled.active,
+.btn-default-black[disabled].active,
+fieldset[disabled] .btn-default-black.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+.btn-default-black .badge {
+  color: #ffffff;
+  background-color: #fff;
+}
+
+.centering {
+  float: none;
+  margin: auto;
+}
+
+.chrInputText {
+  border: 1px solid black;
+  font-size: 12px;
+}
+
+.chrInputTextTall {
+  border: 1px solid black;
+  font-size: 12px;
+  height: 44px;
+}
+
+.chrInputTextNoBorder {
+  border: 0px;
+  border-bottom: 1px solid black;
+  font-size: 10px;
+}
+
+.chrInputTextNoBorderDefault {
+  border: 0px;
+  border-bottom: 1px solid black;
+  font-size: 10px; 
+  background-color: #f5f5f5;
+}
+
+.chrLabel {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.chrProperty {
+  font-weight: bold;
+  font-size: 12px;
+  background-color: #000000;
+  color: #ffffff;
+  height: 22px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.chrPropertyTall {
+  font-weight: bold;
+  font-size: 12px;
+  background-color: #000000;
+  color: #ffffff;
+  height: 44px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.chrLabelSmall {
+  font-weight: bold;
+  font-size: 10px;
+  text-align: center;
+}
+
+.chrLabelTiny {
+  font-weight: bold;
+  font-size: 8px;
+  text-align: center;
+}
+
+.chrDiv {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.panel-black {
+  border-color: #000000;
+}
+
+.panel-black > .panel-heading {
+  color: #ffffff;
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.panel-black > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #000000;
+}
+
+.panel-black > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #000000;
+}
+
+.centrify {
+  text-align: center;
+}
+
+.alttextCenter {
+  color:black;
+  font-weight:bold;
+  min-height:300px;
+  text-align: center;
+}
+
+.mainShadow{
+  position: relative;
+  z-index: 10;
+  -moz-box-shadow:0 0 18px 0 black;
+  -webkit-box-shadow:0 0 18px 0 black;
+  box-shadow:0 0 18px 0 black;
+}

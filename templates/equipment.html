@@ -1,0 +1,229 @@
+{% set module = 'equipment' %}
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Weapons</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">
+
+            <div data-bind="foreach: weaponList">
+                <table style="border: 1px solid black centrify">
+                    <tr>
+
+                        <td style="background-color:black; color:white; width:40%"><center><span class="chrLabel centrify">Weapons</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Wielded </span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify"> Carried</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Total attack bonus</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Damage</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Critical</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Range</span></center></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: weaponName"></input></td>
+                        <td><input type="checkbox" class="chrInputText col-xs-12 centrify" data-bind="checked: wielded"></input></td>
+                        <td><input type="checkbox" class="chrInputText col-xs-12 centrify" data-bind="checked: carried"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: totalAB"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: damage"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: critical"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: range"></input></td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:black; color:white;" colspan="3"><center><span class="chrLabel centrify">Special Properties</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Ammunition </span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Weight</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Size</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Type</span></center></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3"><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: specialProperties"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: ammunition"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: weight"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: size"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: type"></input></td>
+                    </tr>
+                </table><br>
+            </div>
+            
+            <button class="btn-default-black chrLabel" data-bind="click: add_weapon" style="float:right;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div> <!-- panel body -->
+    </div> <!-- panel-black -->
+</div> <!-- container -->
+
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Protective items</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">
+            <div data-bind="foreach: protectiveItemList">
+                <table style="border: 1px solid black centrify">
+                    <tr>
+                        <td style="background-color:black; color:white; width:40%"><center><span class="chrLabel centrify">Protective Item</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Worn </span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Carried</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Type</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">AC Bonus</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Check Pen</span></center></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: armorName"></input></td>
+                        <td><input type="checkbox" class="chrInputText col-xs-12 centrify" data-bind="checked: wielded"></input></td>
+                        <td><input type="checkbox" class="chrInputText col-xs-12 centrify" data-bind="checked: carried"></input></td>
+                        <td><select class="col-xs-12" id="bonusType" data-bind="value: type">
+                                <option value="Alchemical">Alchemical</a>
+                                <option value="Armor">Armor</a>
+                                <option value="Circumstance">Circumstance</a>
+                                <option value="Competence">Competence</a>
+                                <option value="Deflection">Deflection</a>
+                                <option value="Dodge">Dodge</a>
+                                <option value="Enhancement">Enhancement</a>
+                                <option value="Insight">Insight</a>
+                                <option value="Luck">Luck</a>
+                                    <option value="Morale">Morale</a>
+                                <option value="Natural">Natural Armor</a>
+                                <option value="Profane">Profane</a>
+                                <option value="Racial">Racial</a>
+                                <option value="Resistance">Resistance</a>
+                                <option value="Shield">Shield</a>
+                                <option value="Size">Size</a>
+                                <option value="Trait">Trait</a>
+                            </select>
+                        </td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: acBonus"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: checkPen"></input></td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:black; color:white;" colspan="2"><center><span class="chrLabel centrify">Special Properties</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Weight </span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Speed</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Spell Fail</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Max Dex</span></center></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: specialProperties"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: weight"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: speed"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: spellFail"></input></td>
+                        <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: maxDex"></input></td>
+                    </tr>
+                </table><br>
+            </div>
+            <button class="btn-default-black chrLabel" data-bind="click: add_protectiveItem" style="float:right;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div>
+    </div>
+</div>
+
+<!-- ko if: showBuffs -->
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Buffs</b>
+            <div style="float: right;">
+                <a href="#" style="color: white;"><i class="glyphicon glyphicon-refresh" data-bind="click: totalBuffCalculation"></i></a>
+            </div>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">
+                <table style="border: 1px solid black centrify">
+                    <tr>
+                        <td style="background-color:black; color:white; width:40%"><center><span class="chrLabel centrify">Buff</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Active </span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Type</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">AC Bonus</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Attack bonus</span></center></td>
+                        <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Dmg bonus</span></center></td>
+                    </tr>
+                    <tbody data-bind="foreach: buffList">
+                        <tr>
+                            <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: buffName"></input></td>
+                            <td><input type="checkbox" class="chrInputText col-xs-12 centrify" data-bind="checked: active, valueUpdate: 'onClick'"></input></td>
+                            <td><select class="col-xs-12" id="bonusBuffType" data-bind="value: type">
+                                    <option value="Alchemical">Alchemical</a>
+                                    <option value="Armor">Armor</a>
+                                    <option value="Circumstance">Circumstance</a>
+                                    <option value="Competence">Competence</a>
+                                    <option value="Deflection">Deflection</a>
+                                    <option value="Dodge">Dodge</a>
+                                    <option value="Enhancement">Enhancement</a>
+                                    <option value="Insight">Insight</a>
+                                    <option value="Luck">Luck</a>
+                                    <option value="Morale">Morale</a>
+                                    <option value="Natural">Natural Armor</a>
+                                    <option value="Profane">Profane</a>
+                                    <option value="Racial">Racial</a>
+                                    <option value="Resistance">Resistance</a>
+                                    <option value="Shield">Shield</a>
+                                    <option value="Size">Size</a>
+                                    <option value="Trait">Trait</a>
+                                </select>
+                            </td>
+                            <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: acBonus"></input></td>
+                            <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: attackBonus"></input></td>
+                            <td><input type="text" class="chrInputText col-xs-12 centrify" data-bind="value: dmgBonus"></input></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td colspan="3" style="text-align:right;">
+                            <b style="margin-right:8px;">Total</b>
+                        </td>
+                        <td colspan="1">
+                            <input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: totalAcBuff"></input>
+                        </td>
+                        <td colspan="1">
+                            <input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: totalAttackBuff"></input>
+                        </td>
+                        <td colspan="1">
+                            <input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: totalDmgBuff"></input>
+                        </td>
+                    </tr>
+                </table><br>
+            <button class="btn-default-black chrLabel" data-bind="click: add_buff" style="float:right;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+        </div>
+    </div>
+</div>
+<!-- /ko -->
+
+<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-black">
+        <div class="panel-heading">
+            <b>Other possessions</b>
+        </div><!--/.panel-heading-->
+        <div class="panel-body">        
+            <table style="border: 1px solid black centrify">
+                <tr>
+                    <td style="background-color:black; color:white; width:80%"><center><span class="chrLabel centrify">Item</span></center></td>
+                    <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Charges </span></center></td>
+                    <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">Weight </span></center></td>
+                    <td style="background-color:black; color:white;"><center><span class="chrLabelTiny centrify">LOC</span></center></td>
+                </tr>
+                <tbody data-bind="foreach: possessionList">
+                    <tr>
+                        <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: item"></input></td>
+                        <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: charges"></input></td>
+                        <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: weight"></input></td>
+                        <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: LOC"></input></td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <button class="btn-default-black chrLabel" data-bind="click: add_item" style="float:right;">Add <i class="glyphicon glyphicon-chevron-down"></i></button>
+            <center><br><br>
+                <div class="panel panel-black">
+                    <br>
+                    <table>
+                        <tr>
+                            <td>PP</td>
+                            <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: currency_Pp"></input></td>
+                            <td>GP</td>
+                            <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: currency_Gp"></input></td>
+                            <td>SP</td>
+                            <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: currency_Sp"></input></td>
+                            <td>CP</td>
+                            <td><input type="text" class="chrInputTextNoBorder col-xs-12 centrify" data-bind="value: currency_Cp"></input></td>
+                        </tr>
+                    </table>
+                    <br>
+                </div>
+            </center>
+        </div>
+    </div>
+</div>
